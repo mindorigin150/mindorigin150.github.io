@@ -6,7 +6,7 @@ subtitle: "Junior Undergraduate @ <a href='https://www.zju.edu.cn/english/'>Zhej
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: selfie.png
   image_circular: false # crops the image to make it circular
   more_info: "Control Science & Engineering<br>Zhejiang University<br>Hangzhou, China"
 
@@ -32,10 +32,14 @@ I am a **junior** student at **Zhejiang University**, majoring in **Control Scie
 - **Foundation Models:** Exploring VLMs and UMMs to enhance reasoning capabilities.
 - **Embodied AI & Robotics:** Developing VLAs models and generalist agents capable of executing complex tasks in open-world environments.
 - **World Models & Video Generation:** Leveraging **Video Generation** as scalable **World Models** to serve as interactive environments for VLA training and **RL reward.** I am particularly interested in:
-  - **Physical Grounding:** Improve the **physical consistency** of generative models to reflect real-world dynamics accurately.
+  - **Physical Grounding:** Improve the **physical consistency** of video generative models to reflect real-world dynamics accurately.
+  - **Multiview Consistency:** Ensuring 3D-aware spatial coherence across camera perspectives to build robust scene representations.
   - **Efficiency:** Optimizing **Inference acceleration** for video generation to enable high-throughput simulation for reinforcement learning.
 
 
 
 ### Research Projects
-Currently I have an on-going project regarding **cross-view spatial consistency** with Prof. Manling Li at Northwestern University as well as senior PhDs, targeting ECCV 2026!
+- **Cross-view Spatial Consistency for UMMs** \| *ongoing research*
+  - Co-developed the research framework and iterated on methodology with senior PhDs.
+  - Built data processing pipeline and conducted model training process.
+  - *Collaborating with Prof. Manling Li. Targeting ECCV 2026.*

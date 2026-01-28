@@ -167,6 +167,11 @@ ul.task-list input[type="checkbox"] {
   .repo {
     max-width: 50%;
   }
+
+  /* On the repositories activity section, allow cards to use full column width */
+  .repositories-activity .repo {
+    max-width: 100%;
+  }
 }
 
 // Social (bottom)
