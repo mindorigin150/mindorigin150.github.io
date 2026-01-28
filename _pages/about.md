@@ -40,6 +40,7 @@ I am a **junior** student at **Zhejiang University**, majoring in **Control Scie
 
 ### Research Projects
 - **Cross-view Spatial Consistency for UMMs** \| *ongoing research*
-  - Co-developed the research framework and iterated on methodology with senior PhDs.
-  - Built data processing pipeline and conducted model training process.
+  - **Co-developed** the research framework and iterated on methodology with senior PhDs.
+  - **Built** data processing pipeline and conducted model training process.
+  - **Established** a comprehensive evaluation suite by integrating benchmarks (e.g., MindCube, MMSI, CrossPoint) to rigorously assess model performance.
   - *Collaborating with Prof. Manling Li. Targeting ECCV 2026.*
