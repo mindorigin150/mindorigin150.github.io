@@ -39,7 +39,3 @@ I am a **junior** student at **Zhejiang University**, majoring in **Control Scie
 
 ### Research Projects
 Currently I have an on-going project regarding **cross-view spatial consistency** with Prof. Manling Li at Northwestern University as well as senior PhDs, targeting ECCV 2026!
-
-
-
-### Course Projects
