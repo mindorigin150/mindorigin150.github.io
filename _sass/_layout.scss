@@ -9,6 +9,13 @@ body {
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
 
+  font-family: v.$font-family-sans-serif;
+   /* 默认使用 Light 作为正文 */
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+
   h1,
   h2,
   h3,
@@ -16,6 +23,17 @@ body {
   h5,
   h6 {
     scroll-margin-top: 66px;
+
+    // --- 标题特殊设置 ---
+    font-family: v.$headings-font-family;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.8em;
+  }
+
+  // 让段落之间有呼吸感
+  p {
+    margin-bottom: 1.5rem;
   }
 }
 

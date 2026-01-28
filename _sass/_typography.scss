@@ -4,6 +4,41 @@
 
 @use "variables" as v;
 
+@font-face {
+  font-family: 'Sohne';
+  src: url('../fonts/sohne-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* 常规体 */
+@font-face {
+  font-family: 'Sohne';
+  src: url('../fonts/sohne-regular.otf') format('opentype');
+  /* 确保文件后缀对 */
+  font-weight: 400;
+  /* 400 代表正常粗细 */
+  font-style: normal;
+}
+
+/* 定义粗体 */
+@font-face {
+  font-family: 'Sohne';
+  src: url('../fonts/sohne-bold.otf') format('opentype');
+  font-weight: 700;
+  /* 700 代表粗体 */
+  font-style: normal;
+}
+
+/* 斜体 */
+@font-face {
+  font-family: 'Sohne';
+  src: url('../fonts/sohne-italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* 全局文字颜色（不要在这里强制加粗） */
 p,
 h1,
 h2,
@@ -19,11 +54,18 @@ strong {
   color: var(--global-text-color);
 }
 
+/* 只给强调文字加粗 */
+strong,
+b {
+  font-weight: 700;
+}
+
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
 
 table {
+
   td,
   th {
     font-size: 1rem;
@@ -51,6 +93,7 @@ table.table a {
 
 .table-dark {
   background-color: transparent;
+
   &.table-bordered {
     border: 1px solid var(--global-divider-color) !important;
   }
