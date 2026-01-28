@@ -26,9 +26,8 @@ latest_posts:
 
 I am a **junior** student at **Zhejiang University**, majoring in **Control Science and Engineering**. In addition, I am enrolled in the **ACEE Honors Program** at **Chu Kochen Honors College** and have completed extensive coursework in **Computer Science**.
 
-
-
 ### Research Interests
+
 - **Foundation Models:** Exploring VLMs and UMMs to enhance reasoning capabilities.
 - **Embodied AI & Robotics:** Developing VLAs models and generalist agents capable of executing complex tasks in open-world environments.
 - **World Models & Video Generation:** Leveraging **Video Generation** as scalable **World Models** to serve as interactive environments for VLA training and **RL reward.** I am particularly interested in:
@@ -36,11 +35,10 @@ I am a **junior** student at **Zhejiang University**, majoring in **Control Scie
   - **Multiview Consistency:** Ensuring 3D-aware spatial coherence across camera perspectives to build robust scene representations.
   - **Efficiency:** Optimizing **Inference acceleration** for video generation to enable high-throughput simulation for reinforcement learning.
 
-
-
 ### Research Projects
-- **Cross-view Spatial Consistency for UMMs** \| *ongoing research*
+
+- **Cross-view Spatial Consistency for UMMs** \| _ongoing research_
   - **Co-developed** the research framework and iterated on methodology with senior PhDs.
   - **Built** data processing pipeline and conducted model training process.
   - **Established** a comprehensive evaluation suite by integrating benchmarks (e.g., MindCube, MMSI, CrossPoint) to rigorously assess model performance.
-  - *Collaborating with Prof. Manling Li. Targeting ECCV 2026!*
+  - _Collaborating with Prof. Manling Li. Targeting ECCV 2026!_

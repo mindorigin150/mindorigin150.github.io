@@ -5,16 +5,16 @@
 @use "variables" as v;
 
 @font-face {
-  font-family: 'Sohne';
-  src: url('../fonts/sohne-light.otf') format('opentype');
+  font-family: "Sohne";
+  src: url("../fonts/sohne-light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 
 /* 常规体 */
 @font-face {
-  font-family: 'Sohne';
-  src: url('../fonts/sohne-regular.otf') format('opentype');
+  font-family: "Sohne";
+  src: url("../fonts/sohne-regular.otf") format("opentype");
   /* 确保文件后缀对 */
   font-weight: 400;
   /* 400 代表正常粗细 */
@@ -23,8 +23,8 @@
 
 /* 定义粗体 */
 @font-face {
-  font-family: 'Sohne';
-  src: url('../fonts/sohne-bold.otf') format('opentype');
+  font-family: "Sohne";
+  src: url("../fonts/sohne-bold.otf") format("opentype");
   font-weight: 700;
   /* 700 代表粗体 */
   font-style: normal;
@@ -32,8 +32,8 @@
 
 /* 斜体 */
 @font-face {
-  font-family: 'Sohne';
-  src: url('../fonts/sohne-italic.otf') format('opentype');
+  font-family: "Sohne";
+  src: url("../fonts/sohne-italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
@@ -65,7 +65,6 @@ hr {
 }
 
 table {
-
   td,
   th {
     font-size: 1rem;
