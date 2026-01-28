@@ -19,7 +19,7 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
@@ -43,4 +43,4 @@ I am a **junior** student at **Zhejiang University**, majoring in **Control Scie
   - **Co-developed** the research framework and iterated on methodology with senior PhDs.
   - **Built** data processing pipeline and conducted model training process.
   - **Established** a comprehensive evaluation suite by integrating benchmarks (e.g., MindCube, MMSI, CrossPoint) to rigorously assess model performance.
-  - *Collaborating with Prof. Manling Li. Targeting ECCV 2026.*
+  - *Collaborating with Prof. Manling Li. Targeting ECCV 2026!*
