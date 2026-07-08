@@ -1,7 +1,6 @@
 # data
 
-放置简历、个人简介、BibTeX 等非图片资料。
+放置个人简介、BibTeX 或其他非图片资料。
 
-- 默认模板里的 CV 链接指向 `data/resume.pdf`。
-- 你可以把自己的简历 PDF 复制到这里并命名为 `resume.pdf`。
-- 如果以后改用 Git submodule 管理简历仓库，只需要把 `index.html` 里的 CV 链接改成 submodule 内 PDF 的相对路径。
+当前主页的 CV 链接指向 `data/resume.pdf`，但这个 PDF 不在本仓库中维护。
+GitHub Actions 部署时会临时读取 private `mindorigin150/resume` 仓库，并把其中的 `main.pdf` 复制为最终网站里的 `data/resume.pdf`。
