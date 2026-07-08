@@ -8,5 +8,8 @@ data/resume.pdf
 # Avoid accidentally re-adding a local resume clone/submodule.
 resume/
 
+# Avoid accidentally committing the old private homepage clone.
+mindorigin150.github.io-legacy/
+
 # OS/editor noise
 .DS_Store
