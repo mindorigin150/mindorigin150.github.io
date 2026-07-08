@@ -147,8 +147,20 @@ strong {
   border-top: 1px solid var(--border);
 }
 
+.two-column-list .row.experience-row {
+  grid-template-columns: 56px minmax(0, 1fr) 150px;
+  align-items: center;
+}
+
 .two-column-list .row:first-of-type {
   border-top: 0;
+}
+
+.row-logo {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .row-side {
@@ -193,6 +205,14 @@ strong {
   .two-column-list .row {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .two-column-list .row.experience-row {
+    grid-template-columns: 1fr;
+  }
+
+  .row-logo {
+    margin-bottom: 4px;
   }
 
   .row-side {
