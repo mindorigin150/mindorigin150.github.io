@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: 页面标题，通常写你的姓名，例如：张三 -->
+    <title>你的姓名</title>
+
+    <!-- TODO: 搜索引擎/浏览器使用的作者信息 -->
+    <meta name="author" content="你的姓名">
+    <meta
+      name="description"
+      content="个人主页模板：请在这里写一句简短介绍，例如研究方向、当前身份或职业领域。"
+    >
+
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+
+  <body>
+    <main class="page">
+      <!-- 顶部个人信息区：姓名、简介、联系方式、头像 -->
+      <section class="intro">
+        <div class="intro-text">
+          <!-- TODO: 改成你的姓名。英文主页可写英文名；中文主页可写中文名。 -->
+          <h1 class="name">你的姓名</h1>
+
+          <!-- TODO: 这里写 1-2 段个人简介。可包含当前身份、单位、研究/工作方向、导师/团队等。 -->
+          <p>
+            我是 <a href="#">你的单位或学校</a> 的 <strong>你的身份/职位</strong>。
+            我的兴趣方向包括 <strong>方向一</strong>、<strong>方向二</strong> 和 <strong>方向三</strong>。
+            这一段可以写得像简短 bio，方便访客快速了解你。
+          </p>
+          <p>
+            这里可以补充教育经历、当前项目、研究目标、招聘/合作状态，或任何你希望放在主页顶部的重点信息。
+          </p>
+
+          <!-- 联系方式区：删除不用的链接，修改 href 即可。 -->
+          <p class="links" aria-label="联系方式和个人链接">
+            <!-- TODO: 邮箱。mailto: 后面改成你的邮箱地址。 -->
+            <a href="mailto:your.email@example.com">Email</a>
+            <span>/</span>
+
+            <!-- TODO: 简历 PDF。默认把 PDF 放到 data/resume.pdf；以后也可以改成简历 submodule 内的相对路径。 -->
+            <a href="data/resume.pdf">CV</a>
+            <span>/</span>
+
+            <!-- TODO: Google Scholar；没有可以删除这一项。 -->
+            <a href="https://scholar.google.com/">Scholar</a>
+            <span>/</span>
+
+            <!-- TODO: GitHub 主页。 -->
+            <a href="https://github.com/your-github-name">GitHub</a>
+            <span>/</span>
+
+            <!-- TODO: LinkedIn、X/Twitter、个人博客等；不用就删除。 -->
+            <a href="https://www.linkedin.com/">LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="intro-photo">
+          <!-- TODO: 头像。把你的照片放到 images/，例如 images/profile.jpg，然后同时修改 href 和 src。 -->
+          <a href="images/profile.svg">
+            <img src="images/profile.svg" alt="你的头像">
+          </a>
+        </div>
+      </section>
+
+      <!-- 研究兴趣/当前关注方向：不做学术主页可改成 About / Interests。 -->
+      <section class="section">
+        <h2>Research Interests</h2>
+        <!-- TODO: 改成你的研究兴趣或专业方向。 -->
+        <p>
+          用几句话概括你的研究或工作兴趣。比如：我关注机器学习系统、计算机视觉、机器人、自然语言处理、数据库、前端工程等。
+          如果某些项目或论文想重点展示，可以在下面的 Projects / Publications 区域列出来。
+        </p>
+      </section>
+
+      <!-- 项目/论文列表模板：复制一个 article.item 就能新增一条。 -->
+      <section class="section">
+        <h2>Selected Projects / Publications</h2>
+
+        <!-- 条目模板开始：复制这一整个 article，然后替换标题、作者、会议/时间、链接、简介、图片。 -->
+        <article class="item highlight">
+          <div class="item-media">
+            <!-- TODO: 项目缩略图。没有图片时可以删除整个 div.item-media。 -->
+            <img src="images/profile.svg" alt="项目缩略图占位">
+          </div>
+          <div class="item-content">
+            <!-- TODO: 项目/论文标题和主页链接。 -->
+            <h3><a href="#">项目或论文标题</a></h3>
+
+            <!-- TODO: 作者列表。如果是论文，可用 strong 标出你自己。 -->
+            <p class="meta"><strong>你的姓名</strong>, 合作者 A, 合作者 B</p>
+
+            <!-- TODO: 发表地点、年份、奖项等。不是论文可写项目时间或角色。 -->
+            <p class="meta"><em>会议/期刊/项目名称</em>, 年份</p>
+
+            <!-- TODO: 常见链接：project page / paper / code / demo / slides。删除不用的。 -->
+            <p class="links small">
+              <a href="#">project page</a>
+              <span>/</span>
+              <a href="#">paper</a>
+              <span>/</span>
+              <a href="#">code</a>
+            </p>
+
+            <!-- TODO: 一两句话描述贡献、方法或结果。 -->
+            <p>
+              用一两句话解释这个项目解决了什么问题、你的贡献是什么、有什么结果或影响。
+            </p>
+          </div>
+        </article>
+        <!-- 条目模板结束。 -->
+
+        <article class="item">
+          <div class="item-content full-width">
+            <h3><a href="#">另一个项目或经历标题</a></h3>
+            <p class="meta">角色/时间/地点</p>
+            <p>
+              如果没有图片，也可以使用这种纯文字条目。适合课程项目、开源项目、实习经历、竞赛经历等。
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- 教育经历：按时间倒序填写。 -->
+      <section class="section two-column-list">
+        <h2>Education</h2>
+        <!-- TODO: 每个 div.row 是一条经历；复制/删除即可。 -->
+        <div class="row">
+          <div class="row-main">
+            <strong>学校名称</strong><br>
+            学位或专业，例如 B.S. in Computer Science
+          </div>
+          <div class="row-side">年份 - 年份</div>
+        </div>
+      </section>
+
+      <!-- 工作/实习/科研经历：不需要可删除整个 section。 -->
+      <section class="section two-column-list">
+        <h2>Experience</h2>
+        <div class="row">
+          <div class="row-main">
+            <strong>单位或团队名称</strong><br>
+            职位/角色；一句话描述主要工作。
+          </div>
+          <div class="row-side">年份 - 年份</div>
+        </div>
+      </section>
+
+      <!-- 其他内容：Awards、Teaching、Service、Talks、Miscellaneous 都可以按需添加。 -->
+      <section class="section">
+        <h2>Miscellaneous</h2>
+        <ul>
+          <li>TODO: 奖项、服务、教学、演讲、兴趣爱好等。</li>
+          <li>不需要这个区域时，可以删除整个 Miscellaneous section。</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <!-- TODO: 可保留模板来源说明，也可以改成自己的版权信息。 -->
+        <p>Website template adapted from a simple academic homepage layout.</p>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+  <title id="title">Profile photo placeholder</title>
+  <desc id="desc">Replace this placeholder with your own profile photo.</desc>
+  <rect width="400" height="400" fill="#f3f5f7"/>
+  <circle cx="200" cy="155" r="72" fill="#d8dee8"/>
+  <path d="M80 352c18-77 67-119 120-119s102 42 120 119" fill="#d8dee8"/>
+  <text x="200" y="374" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#6b7280">PHOTO</text>
+</svg>
