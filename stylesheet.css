@@ -148,7 +148,9 @@ strong {
 }
 
 .two-column-list .row.experience-row {
-  grid-template-columns: 56px minmax(0, 1fr) 150px;
+  --logo-size: 72px;
+  grid-template-columns: var(--logo-size) minmax(0, 1fr);
+  gap: 20px;
   align-items: center;
 }
 
@@ -158,9 +160,13 @@ strong {
 
 .row-logo {
   display: block;
-  width: 48px;
-  height: 48px;
+  width: var(--logo-size);
+  height: var(--logo-size);
   object-fit: contain;
+}
+
+.experience-date {
+  color: var(--muted);
 }
 
 .row-side {
@@ -205,14 +211,6 @@ strong {
   .two-column-list .row {
     grid-template-columns: 1fr;
     gap: 4px;
-  }
-
-  .two-column-list .row.experience-row {
-    grid-template-columns: 1fr;
-  }
-
-  .row-logo {
-    margin-bottom: 4px;
   }
 
   .row-side {
