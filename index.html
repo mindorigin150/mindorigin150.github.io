@@ -49,8 +49,8 @@
           <span>/</span>
 
           <!-- TODO: Google Scholar；没有可以删除这一项。 -->
-          <!-- <a href="https://scholar.google.com/">Scholar</a>
-          <span>/</span> -->
+          <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=yOI3ZtEAAAAJ">Scholar</a>
+          <span>/</span>
 
           <!-- GitHub -->
           <a href="https://github.com/mindorigin150">GitHub</a>
@@ -86,54 +86,29 @@
       </ul>
     </section>
 
-    <!-- 项目/论文列表：保留空白区域；legacy 的 Research Projects 暂不迁移。 -->
+    <!-- selected publications -->
     <section class="section">
-      <h2>Selected Projects / Publications</h2>
-      <template id="project-items-template">
-        <!-- 暂时隐藏项目/论文模板；需要显示时，删除 template 开始/结束标签即可。 -->
-        <!-- 条目模板开始：复制这一整个 article，然后替换标题、作者、会议/时间、链接、简介、图片。 -->
-        <article class="item highlight">
-          <div class="item-media">
-            <!-- TODO: 项目缩略图。没有图片时可以删除整个 div.item-media。 -->
-            <img src="images/profile.svg" alt="项目缩略图占位">
-          </div>
-          <div class="item-content">
-            <!-- TODO: 项目/论文标题和主页链接。 -->
-            <h3><a href="#">项目或论文标题</a></h3>
-
-            <!-- TODO: 作者列表。如果是论文，可用 strong 标出你自己。 -->
-            <p class="meta"><strong>你的姓名</strong>, 合作者 A, 合作者 B</p>
-
-            <!-- TODO: 发表地点、年份、奖项等。不是论文可写项目时间或角色。 -->
-            <p class="meta"><em>会议/期刊/项目名称</em>, 年份</p>
-
-            <!-- TODO: 常见链接：project page / paper / code / demo / slides。删除不用的。 -->
-            <p class="links small">
-              <a href="#">project page</a>
-              <span>/</span>
-              <a href="#">paper</a>
-              <span>/</span>
-              <a href="#">code</a>
-            </p>
-
-            <!-- TODO: 一两句话描述贡献、方法或结果。 -->
-            <p>
-              用一两句话解释这个项目解决了什么问题、你的贡献是什么、有什么结果或影响。
-            </p>
-          </div>
-        </article>
-        <!-- 条目模板结束。 -->
-
-        <article class="item">
-          <div class="item-content full-width">
-            <h3><a href="#">另一个项目或经历标题</a></h3>
-            <p class="meta">角色/时间/地点</p>
-            <p>
-              如果没有图片，也可以使用这种纯文字条目。适合课程项目、开源项目、实习经历、竞赛经历等。
-            </p>
-          </div>
-        </article>
-      </template>
+      <h2>Selected Publications</h2>
+      <article class="item">
+        <div class="item-content full-width">
+          <h3>
+            <a href="https://arxiv.org/abs/2607.00491">
+              MindEdit-Bench: Benchmarking Object-Level Counterfactual Spatial Reasoning in VLMs from In-the-Wild Photos
+            </a>
+          </h3>
+          <p class="meta">
+            Leyuan Yu<sup>*</sup>, Xiao Tang<sup>*</sup>, Minghao Liu<sup>*</sup>,
+            <strong>Xinyuan Li</strong>, Xiaokai Bai, Sheng Zhou, Qunshu Lin,
+            Weihao Xuan, Naoto Yokoya
+          </p>
+          <p class="meta"><em>arXiv preprint</em>, 2026 &middot; * Equal contribution.</p>
+          <p class="links small">
+            <a href="https://arxiv.org/abs/2607.00491">Paper</a>
+            <span>/</span>
+            <a href="https://huggingface.co/datasets/ZODAOfficial/MindEdit-Bench">Dataset</a>
+          </p>
+        </div>
+      </article>
     </section>
 
     <!-- 教育经历：按时间倒序填写。 -->
