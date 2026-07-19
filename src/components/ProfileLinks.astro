@@ -1,0 +1,11 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<ul class="profile-links" aria-label="Contact and profile links">
+  {
+    siteConfig.profileLinks.map((link) => (
+      <li><a href={link.href}>{link.label}</a></li>
+    ))
+  }
+</ul>

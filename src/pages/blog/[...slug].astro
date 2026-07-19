@@ -1,0 +1,47 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../utils/formatDate';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => import.meta.env.DEV || !data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={`${post.data.title} — Xinyuan Li`}
+  description={post.data.description}
+  image={post.data.cover}
+  type="article"
+  noindex={post.data.draft}
+>
+  <main id="main-content" class="page-main site-shell article-page">
+    <a class="back-link" href="/blog/"><span aria-hidden="true">←</span> Blog</a>
+    <article>
+      <header class="article-header">
+        {post.data.draft && <p class="draft-label">Draft preview</p>}
+        <p class="article-meta">
+          <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+          {post.data.tags.length > 0 && <span> · {post.data.tags.join(' · ')}</span>}
+        </p>
+        <h1>{post.data.title}</h1>
+        <p class="article-deck">{post.data.description}</p>
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </main>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'research'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const primaryUrl = data.detailPage
+  ? `/research/${entry.id}/`
+  : (data.links[0]?.url ?? '/research/');
+---
+
+<article class="research-entry">
+  <div class="research-entry__body">
+    <h3><a href={primaryUrl}>{data.title}</a></h3>
+    {
+      data.authors.length > 0 && (
+        <p class="research-authors">
+          {data.authors.map((author, authorIndex) => (
+            <>
+              {author.self ? <strong>{author.name}</strong> : author.name}
+              {author.equalContribution && <sup>*</sup>}
+              {authorIndex < data.authors.length - 1 ? ', ' : ''}
+            </>
+          ))}
+        </p>
+      )
+    }
+    <p class="research-venue">
+      {data.venue && <em>{data.venue}</em>}
+      {data.venue && <>, {data.year}</>}
+      {!data.venue && data.year}
+      {data.equalContributionNote ? <span aria-hidden="true"> · </span> : null}
+      {data.equalContributionNote}
+    </p>
+    <ul class="research-links" aria-label={`Links for ${data.title}`}>
+      {data.links.map((link) => <li><a href={link.url}>{link.label}</a></li>)}
+    </ul>
+  </div>
+</article>

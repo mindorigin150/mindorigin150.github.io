@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../utils/formatDate';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<BaseLayout
+  title="Blog — Xinyuan Li"
+  description="Research notes, technical field reports, and occasional observations by Xinyuan Li."
+>
+  <main id="main-content" class="page-main site-shell inner-page">
+    <a class="back-link" href="/"><span aria-hidden="true">←</span> Xinyuan Li</a>
+    <header class="page-intro">
+      <h1>Blog</h1>
+      <p>
+        A place for research notes, technical field reports, paper reading, and occasional observations.
+      </p>
+      <a class="rss-link" href="/rss.xml">RSS feed <span aria-hidden="true">↗</span></a>
+    </header>
+
+    {
+      posts.length > 0 ? (
+        <ol class="blog-list">
+          {posts.map((post) => (
+            <li>
+              <article>
+                <p class="blog-list__meta">
+                  <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+                  {post.data.tags.length > 0 && <span> · {post.data.tags.join(' · ')}</span>}
+                </p>
+                <h2><a href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
+                <p>{post.data.description}</p>
+              </article>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <section class="empty-state" aria-labelledby="empty-blog-title">
+          <h2 id="empty-blog-title">The blog is in progress.</h2>
+          <p>The writing system is ready; the first public post will appear here when it is ready.</p>
+        </section>
+      )
+    }
+  </main>
+</BaseLayout>

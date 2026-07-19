@@ -1,5 +1,8 @@
 name: Deploy GitHub Pages
 
+env:
+  ASTRO_TELEMETRY_DISABLED: 1
+
 on:
   push:
     branches: [main, master]
@@ -23,6 +26,12 @@ jobs:
           submodules: false
           persist-credentials: false
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
       - name: Checkout private resume
         uses: actions/checkout@v7
         with:
@@ -31,26 +40,24 @@ jobs:
           ssh-key: ${{ secrets.RESUME_DEPLOY_KEY }}
           persist-credentials: false
 
+      - name: Install and validate site
+        run: |
+          npm ci
+          npm run check
+
       - name: Build static site artifact
         run: |
           test -f _resume/main.pdf
+          test -f _resume/main_zh.pdf
 
-          rm -rf _site
-          mkdir -p _site
+          npm run build
 
-          rsync -a \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='.gitmodules' \
-            --exclude='_resume' \
-            --exclude='_site' \
-            --exclude='resume' \
-            ./ _site/
+          mkdir -p dist/data
+          cp _resume/main.pdf dist/data/resume.pdf
+          cp _resume/main_zh.pdf dist/data/resume-zh.pdf
+          touch dist/.nojekyll
 
-          mkdir -p _site/data
-          cp _resume/main.pdf _site/data/resume.pdf
-
-          touch _site/.nojekyll
+          npm run verify:deploy
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -58,7 +65,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: _site
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest

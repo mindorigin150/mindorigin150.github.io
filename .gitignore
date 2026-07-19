@@ -1,9 +1,15 @@
 # Local build/deploy scratch directories
 _site/
 _resume/
+dist/
+.astro/
+node_modules/
 
 # CV is copied from the private resume repository during GitHub Actions deployment.
 data/resume.pdf
+data/resume-zh.pdf
+public/data/resume.pdf
+public/data/resume-zh.pdf
 
 # Avoid accidentally re-adding a local resume clone/submodule.
 resume/

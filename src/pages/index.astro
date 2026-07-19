@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import ProfileLinks from '../components/ProfileLinks.astro';
+import ResearchEntry from '../components/ResearchEntry.astro';
+import { siteConfig } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const featuredResearch = (await getCollection('research', ({ data }) => data.featured && !data.draft))
+  .sort((a, b) => b.data.year - a.data.year);
+---
+
+<BaseLayout>
+  <main id="main-content" class="page-main site-shell home-page">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro__content">
+        <h1 id="intro-title">Xinyuan Li</h1>
+        <div class="intro__bio">
+          <p>
+            I am a junior undergraduate at <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>,
+            majoring in Automation Engineering. I am also enrolled in the ACEE Honors Program at Chu Kochen
+            Honors College.
+          </p>
+          <p>
+            I am currently a Research Intern at <a href="https://www.mll.lab.northwestern.edu/">MLL Lab</a>,
+            Northwestern University, advised by <a href="https://limanling.github.io/">Prof. Manling Li</a>.
+            My current work studies latency-sensitive evaluation for real-time VLA control and efficient
+            infrastructure for model training and simulation.
+          </p>
+        </div>
+        <ProfileLinks />
+      </div>
+
+      <a class="portrait" href="/images/profile.jpg" aria-label="Open Xinyuan Li's profile portrait">
+        <img
+          src="/images/profile.jpg"
+          alt="Illustrated portrait of Xinyuan Li"
+          width="440"
+          height="573"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </a>
+    </section>
+
+    <section class="home-section" aria-labelledby="interests-title">
+      <h2 id="interests-title">Research Interests</h2>
+      <ul class="interest-list">
+        {
+          siteConfig.interests.map((interest) => (
+            <li>
+              <strong>{interest.title}:</strong> {interest.description}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="home-section" aria-labelledby="selected-research-title">
+      <h2 id="selected-research-title">Selected Publications</h2>
+      <div class="research-list">
+        {featuredResearch.map((entry) => <ResearchEntry entry={entry} />)}
+      </div>
+    </section>
+
+    <section class="home-section logo-list" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <div class="logo-entry">
+        <img
+          class="entry-logo"
+          src="/images/zhejiang-university-logo.png"
+          alt="Zhejiang University logo"
+          width="72"
+          height="72"
+          loading="lazy"
+        />
+        <div class="entry-content">
+          <strong><a href={siteConfig.education.href}>{siteConfig.education.institution}</a></strong><br />
+          {siteConfig.education.role}; {siteConfig.education.detail}.<br />
+          <time>{siteConfig.education.date}</time>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section logo-list" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <div class="logo-entry">
+        <img
+          class="entry-logo"
+          src="/images/northwestern-seal.svg"
+          alt="Northwestern University seal"
+          width="72"
+          height="72"
+          loading="lazy"
+        />
+        <div class="entry-content">
+          <strong><a href={siteConfig.experience.href}>{siteConfig.experience.institution}</a></strong><br />
+          {siteConfig.experience.role}, <a href={siteConfig.experience.labHref}>{siteConfig.experience.lab}</a><br />
+          Advisor: <a href={siteConfig.experience.advisorHref}>Prof. Manling Li</a>.<br />
+          <time>{siteConfig.experience.date}</time>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,24 +1,47 @@
-# Personal Homepage Template
+# Xinyuan Li — Personal Homepage
 
-这是一个轻量个人主页模板，已经清除了原始示例人物的论文、图片、视频和项目页内容。
+基于 [Astro](https://astro.build/) 的纯静态个人主页，包含首页、Research 索引、Blog 内容系统、RSS 和 GitHub Pages 自动部署。
 
-## 常用修改位置
+## 本地开发
 
-- `index.html`：主页内容。文件里有中文 `TODO` 注释，按注释替换姓名、简介、邮箱、链接、项目/论文、教育和经历。
-- `stylesheet.css`：页面样式。只改内容时通常不用动。
-- `images/`：头像和项目图片。默认有 `images/profile.svg` 作为占位头像。
-- `data/`：非图片资料目录。部署时 GitHub Actions 会把 private `mindorigin150/resume` 仓库里的 `main.pdf` 复制成 `data/resume.pdf`。
-- `.github/workflows/pages.yml`：GitHub Pages 部署 workflow。
+需要 Node.js 22.12 或更高版本。
+
+```bash
+npm ci
+npm run dev
+```
+
+提交前运行：
+
+```bash
+npm run check
+npm run build
+npm run verify
+```
+
+生产产物输出到 `dist/`。
+
+## 内容结构
+
+- `src/pages/`：主页、Research、Blog、RSS 和 404 路由。
+- `src/content/research/`：论文与项目 Markdown 条目。
+- `src/content/blog/`：Blog Markdown；`draft: true` 的条目不会出现在生产页面或 RSS。
+- `src/data/site.ts`：姓名、简介、联系方式、研究兴趣和经历。
+- `src/styles/global.css`：颜色、字体、网格、文章排版和响应式规则。
+- `public/images/`：头像及静态图片，部署后仍使用 `/images/...` URL。
+
+Blog 支持 Markdown、代码高亮和 LaTeX 数学公式。`src/content/blog/writing-template.md` 是默认草稿模板。
 
 ## 简历来源
 
-主页里的 CV 链接是：
+主页中的简历链接为：
 
-```html
-<a href="data/resume.pdf">CV</a>
+```text
+/data/resume.pdf
+/data/resume-zh.pdf
 ```
 
-`data/resume.pdf` 不直接提交到本仓库；它会在 GitHub Actions 部署时从 private resume 仓库复制到最终 Pages 产物里。这样只需要维护一份 resume 源码。
+PDF 不直接提交到本仓库。GitHub Actions 会从 private `mindorigin150/resume` 仓库读取 `main.pdf` 和 `main_zh.pdf`，并复制到最终 Astro 产物。
 
 部署前需要配置两个 secret：
 
@@ -28,7 +51,7 @@
 RESUME_DEPLOY_KEY
 ```
 
-这个 secret 应该是能只读访问 `mindorigin150/resume` 的 SSH deploy key private key。
+该 secret 应是能够只读访问 `mindorigin150/resume` 的 SSH deploy key private key。
 
 2. 在 private `mindorigin150/resume` 仓库中添加 Actions secret：
 
@@ -36,10 +59,8 @@ RESUME_DEPLOY_KEY
 HOMEPAGE_ACTIONS_TOKEN
 ```
 
-这个 secret 应该是一个能触发 `mindorigin150/mindorigin150.github.io` workflow 的 token，至少需要目标主页仓库的 `Actions: Read and write` 权限。
+该 secret 应是能够触发 `mindorigin150/mindorigin150.github.io` workflow 的 token，至少需要目标主页仓库的 `Actions: Read and write` 权限。
 
 `resume` 仓库里的 `.github/workflows/deploy-homepage.yml` 会在 `main/master` 分支 push 后自动触发本仓库的 Pages 部署 workflow。
 
-## 本地预览
-
-直接用浏览器打开 `index.html` 即可。此时 CV 链接可能不存在，因为 `data/resume.pdf` 是部署时生成的产物。
+本地预览时两个简历 URL 可能返回 404，因为 PDF 只在部署工作流中注入。
