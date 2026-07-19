@@ -21,7 +21,7 @@ const requiredFiles = [
 ];
 
 if (requireResumes) {
-  requiredFiles.push('data/resume.pdf', 'data/resume-zh.pdf', '.nojekyll');
+  requiredFiles.push('data/resume.pdf', '.nojekyll');
 }
 
 for (const file of requiredFiles) {
@@ -95,7 +95,7 @@ if (existsSync(dist)) {
       if (['#', 'mailto:', 'http://', 'https://', '//'].some((prefix) => reference.startsWith(prefix))) continue;
 
       const url = new URL(reference, 'https://mindorigin150.github.io');
-      if (!requireResumes && ['/data/resume.pdf', '/data/resume-zh.pdf'].includes(url.pathname)) continue;
+      if (!requireResumes && url.pathname === '/data/resume.pdf') continue;
       if (!localCandidates(url.pathname).some(existsSync)) {
         problems.push(`Missing local target ${reference} referenced by ${file}`);
       }

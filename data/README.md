@@ -5,4 +5,4 @@
 GitHub Actions 构建 Astro 后，会从 private `mindorigin150/resume` 仓库注入：
 
 - `main.pdf` → `dist/data/resume.pdf`
-- `main_zh.pdf` → `dist/data/resume-zh.pdf`
+- `main_zh.pdf` → `dist/data/resume-zh.pdf`（可选，当前首页未显示中文 CV 链接）

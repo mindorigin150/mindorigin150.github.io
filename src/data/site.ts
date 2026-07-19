@@ -16,7 +16,6 @@ export const siteConfig = {
   profileLinks: [
     { label: 'Email', href: 'mailto:xinyuanli2327@outlook.com' },
     { label: 'CV', href: '/data/resume.pdf' },
-    { label: 'CV (中文)', href: '/data/resume-zh.pdf' },
     {
       label: 'Scholar',
       href: 'https://scholar.google.com/citations?view_op=list_works&hl=en&user=yOI3ZtEAAAAJ',

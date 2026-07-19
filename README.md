@@ -38,10 +38,9 @@ Blog 支持 Markdown、代码高亮和 LaTeX 数学公式。`src/content/blog/wr
 
 ```text
 /data/resume.pdf
-/data/resume-zh.pdf
 ```
 
-PDF 不直接提交到本仓库。GitHub Actions 会从 private `mindorigin150/resume` 仓库读取 `main.pdf` 和 `main_zh.pdf`，并复制到最终 Astro 产物。
+PDF 不直接提交到本仓库。GitHub Actions 会从 private `mindorigin150/resume` 仓库读取 `main.pdf`，并复制到最终 Astro 产物。`main_zh.pdf` 当前为可选文件，准备好后可重新启用首页中文 CV 链接。
 
 部署前需要配置两个 secret：
 

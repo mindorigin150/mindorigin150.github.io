@@ -48,13 +48,14 @@ jobs:
       - name: Build static site artifact
         run: |
           test -f _resume/main.pdf
-          test -f _resume/main_zh.pdf
 
           npm run build
 
           mkdir -p dist/data
           cp _resume/main.pdf dist/data/resume.pdf
-          cp _resume/main_zh.pdf dist/data/resume-zh.pdf
+          if [[ -f _resume/main_zh.pdf ]]; then
+            cp _resume/main_zh.pdf dist/data/resume-zh.pdf
+          fi
           touch dist/.nojekyll
 
           npm run verify:deploy
