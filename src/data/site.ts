@@ -26,13 +26,12 @@ export const siteConfig = {
   ],
   interests: [
     {
-      title: 'Multimodal Foundation Models',
-      description: 'Exploring VLMs, UMMs, and VLAs for perception, reasoning, and action.',
+      title: 'Multimodal Foundation Models & World Action Models (WAMs)',
+      description: 'Exploring VLMs, UMMs, VLAs, and WAMs for perception, reasoning, world modeling, and action.',
     },
     {
-      title: 'Reinforcement Learning & Real-Time VLA Evaluation',
-      description:
-        'Studying decision-making under latency-sensitive, continuously evolving environments.',
+      title: 'Reinforcement Learning',
+      description: 'Studying decision-making and policy learning in interactive environments.',
     },
     {
       title: 'Efficient AI Systems',
