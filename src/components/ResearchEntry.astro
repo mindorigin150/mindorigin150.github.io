@@ -12,7 +12,20 @@ const primaryUrl = data.detailPage
   : (data.links[0]?.url ?? '/research/');
 ---
 
-<article class="research-entry">
+<article class:list={['research-entry', { 'research-entry--illustrated': data.image }]}>
+  {
+    data.image && (
+      <div class="research-entry__thumbnail">
+        <img
+          class="research-entry__image"
+          src={data.image}
+          alt={data.imageAlt}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    )
+  }
   <div class="research-entry__body">
     <h3><a href={primaryUrl}>{data.title}</a></h3>
     {

@@ -26,6 +26,7 @@ const research = defineCollection({
     links: z.array(linkSchema).min(1),
     contribution: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
     detailPage: z.boolean().default(false),

@@ -18,6 +18,8 @@ authors:
   - name: Naoto Yokoya
 venue: arXiv preprint
 equalContributionNote: "* Equal contribution."
+image: /images/mindedit-spatial-editing.png
+imageAlt: "A room with a sofa and lamp; a pink arrow and dashed outline show the lamp moving toward the camera."
 links:
   - label: Paper
     url: https://arxiv.org/abs/2607.00491
