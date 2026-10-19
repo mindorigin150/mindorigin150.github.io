@@ -17,11 +17,11 @@ export const siteConfig = {
     { label: 'Email', href: 'mailto:xinyuanli2327@outlook.com' },
     { label: 'CV', href: '/data/resume.pdf' },
     {
-      label: 'Scholar',
+      label: 'Google Scholar',
       href: 'https://scholar.google.com/citations?view_op=list_works&hl=en&user=yOI3ZtEAAAAJ',
     },
     { label: 'GitHub', href: 'https://github.com/mindorigin150' },
-    { label: 'Blog', href: '/blog/' },
+    { label: 'X', href: 'https://x.com/xinyuanli_ai' },
   ],
   interests: [
     {
@@ -57,6 +57,7 @@ export const siteConfig = {
   },
   sameAs: [
     'https://github.com/mindorigin150',
+    'https://x.com/xinyuanli_ai',
     'https://scholar.google.com/citations?view_op=list_works&hl=en&user=yOI3ZtEAAAAJ',
   ],
 } as const;
