@@ -16,15 +16,20 @@ const featuredResearch = (await getCollection('research', ({ data }) => data.fea
         <h1 id="intro-title">Xinyuan Li</h1>
         <div class="intro__bio">
           <p>
-            I am a junior undergraduate at <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>,
-            majoring in Automation Engineering. I am also enrolled in the ACEE Honors Program at Chu Kochen
-            Honors College.
+            I am a senior undergraduate at <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>,
+            majoring in Automation Engineering and enrolled in the ACEE Honors Program at Chu Kochen Honors
+            College. I am currently a Research Intern at
+            <a href="https://www.mll.lab.northwestern.edu/">MLL Lab</a>, Northwestern University, advised by
+            <a href="https://limanling.github.io/">Prof. Manling Li</a>.
           </p>
           <p>
-            I am currently a Research Intern at <a href="https://www.mll.lab.northwestern.edu/">MLL Lab</a>,
-            Northwestern University, advised by <a href="https://limanling.github.io/">Prof. Manling Li</a>.
-            My current work studies latency-sensitive evaluation for real-time VLA control and efficient
-            infrastructure for model training and simulation.
+            My research lies at the intersection of <strong>multimodal agents</strong> and
+            <strong>efficient AI systems</strong>. I am interested in how foundation models operate in
+            dynamic, real-world environments, and in building the systems that make training and deploying
+            them fast and reliable.
+          </p>
+          <p class="intro__status">
+            I am applying for Ph.D. programs starting Fall 2027.
           </p>
         </div>
         <ProfileLinks />
@@ -40,19 +45,6 @@ const featuredResearch = (await getCollection('research', ({ data }) => data.fea
           fetchpriority="high"
         />
       </a>
-    </section>
-
-    <section class="home-section" aria-labelledby="interests-title">
-      <h2 id="interests-title">Research Interests</h2>
-      <ul class="interest-list">
-        {
-          siteConfig.interests.map((interest) => (
-            <li>
-              <strong>{interest.title}:</strong> {interest.description}
-            </li>
-          ))
-        }
-      </ul>
     </section>
 
     <section class="home-section" aria-labelledby="news-title">

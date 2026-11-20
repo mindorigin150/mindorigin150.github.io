@@ -1,16 +1,16 @@
 export const siteConfig = {
   name: 'Xinyuan Li',
-  title: 'Xinyuan Li — Multimodal AI & Robot Learning',
+  title: 'Xinyuan Li',
   description:
-    'Junior undergraduate at Zhejiang University researching multimodal foundation models, reinforcement learning, real-time VLA evaluation, and efficient AI systems.',
+    'Senior undergraduate at Zhejiang University and Research Intern at Northwestern University working at the intersection of multimodal agents and efficient AI systems.',
   url: 'https://mindorigin150.github.io',
   email: 'xinyuanli2327@outlook.com',
   keywords: [
     'Xinyuan Li',
     'Zhejiang University',
-    'Multimodal Foundation Models',
-    'Reinforcement Learning',
-    'Real-Time VLA Evaluation',
+    'Northwestern University',
+    'Multimodal Agents',
+    'Foundation Models',
     'Efficient AI Systems',
   ],
   profileLinks: [
@@ -22,21 +22,6 @@ export const siteConfig = {
     },
     { label: 'GitHub', href: 'https://github.com/mindorigin150' },
     { label: 'X', href: 'https://x.com/xinyuanli_ai' },
-  ],
-  interests: [
-    {
-      title: 'Multimodal Foundation Models & World Action Models (WAMs)',
-      description: 'Exploring VLMs, UMMs, VLAs, and WAMs for perception, reasoning, world modeling, and action.',
-    },
-    {
-      title: 'Reinforcement Learning',
-      description: 'Studying decision-making and policy learning in interactive environments.',
-    },
-    {
-      title: 'Efficient AI Systems',
-      description:
-        'Building GPU/CUDA environment acceleration, KV streaming cache, FlexAttention masks, and training/inference optimizations.',
-    },
   ],
   education: {
     institution: 'Zhejiang University',

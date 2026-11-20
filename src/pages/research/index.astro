@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import ResearchEntry from '../../components/ResearchEntry.astro';
-import { siteConfig } from '../../data/site';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const research = (await getCollection('research', ({ data }) => !data.draft))
@@ -10,15 +9,16 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
 
 <BaseLayout
   title="Research — Xinyuan Li"
-  description="Research by Xinyuan Li on multimodal foundation models, real-time VLA evaluation, reinforcement learning, and efficient AI systems."
+  description="Research by Xinyuan Li at the intersection of multimodal agents and efficient AI systems."
 >
   <main id="main-content" class="page-main site-shell inner-page">
     <a class="back-link" href="/"><span aria-hidden="true">←</span> Xinyuan Li</a>
     <header class="page-intro">
       <h1>Research</h1>
       <p>
-        My work focuses on multimodal foundation models, embodied decision-making under real-time constraints,
-        and the systems that make training and evaluation more efficient.
+        My research lies at the intersection of multimodal agents and efficient AI systems—studying how
+        foundation models operate in dynamic, real-world environments, and building the systems that make
+        training and deploying them fast and reliable.
       </p>
     </header>
 
@@ -29,21 +29,6 @@ const research = (await getCollection('research', ({ data }) => !data.draft))
       <div class="research-list">
         {research.map((entry) => <ResearchEntry entry={entry} />)}
       </div>
-    </section>
-
-    <section class="indexed-section" aria-labelledby="research-questions-title">
-      <div class="section-heading">
-        <h2 id="research-questions-title">Current Questions</h2>
-      </div>
-      <ul class="interest-list">
-        {
-          siteConfig.interests.map((interest) => (
-            <li>
-              <strong>{interest.title}:</strong> {interest.description}
-            </li>
-          ))
-        }
-      </ul>
     </section>
   </main>
 </BaseLayout>
