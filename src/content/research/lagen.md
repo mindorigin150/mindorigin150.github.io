@@ -3,14 +3,14 @@ title: "LAGEN: Are Vision-Language Agents Latency Aware?"
 year: 2026
 kind: publication
 authors:
-  - name: Xinyuan Li
-    self: true
-    equalContribution: true
   - name: Talha Chafekar
     equalContribution: true
   - name: Zihan Wang
     equalContribution: true
   - name: Zeju Li
+    equalContribution: true
+  - name: Xinyuan Li
+    self: true
     equalContribution: true
   - name: Qineng Wang
   - name: Jiajun Wu
